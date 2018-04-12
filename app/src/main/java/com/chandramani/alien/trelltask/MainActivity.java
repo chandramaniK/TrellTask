@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         tabHost.setCurrentTab(1);
         //video frames and uri
         //////////////////////////////////
-        final String uriPath = "android.resource://" + getPackageName() + "/raw/videoplayback";
+        final String uriPath = "android.resource://" + getPackageName() + "/raw/testvideo";
         final Uri uri = Uri.parse(uriPath);
         //MediaMetadataRetriver
         //////////////////////////////////
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         DecimalFormat df = new DecimalFormat("#.000");
-       scrolled_valuex = horizontalScrollView.getScrollX();
+        scrolled_valuex = horizontalScrollView.getScrollX();
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             starttime= ((scrolled_valuex+startthumb)/200)*20;
