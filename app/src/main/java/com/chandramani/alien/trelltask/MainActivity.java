@@ -43,11 +43,16 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
     private float dxx;
     private float dyy;
+    public double tempp;
     float starttime,endtimee;
     public int firstthumb,secondthumb;
     public  float scrolled_valuex =0;
     public HorizontalScrollView horizontalScrollView;
     public float startthumb =0, endthumb=0;
+    public ImageView imagepogress;
+    public ImageView imagepogress2;
+    public ImageView connectinline;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,8 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
         int width1= (int)((80 * displayMetrics.density) + 0.5);
         int width2=(int)((250 * displayMetrics.density) + 0.5);
-        ImageView imagepogress =findViewById(R.id.progresspluss);
-        ImageView imagepogress2 =findViewById(R.id.progressminus);
+        tempp = (5 * displayMetrics.density) + 0.5;
+        imagepogress =findViewById(R.id.progresspluss);
+        imagepogress2 =findViewById(R.id.progressminus);
         RelativeLayout.LayoutParams layoutParamsx = new RelativeLayout.LayoutParams(width1+40,
                 RelativeLayout.LayoutParams.MATCH_PARENT
         );
@@ -246,8 +252,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
     @Override
     public boolean onTouch(View view, MotionEvent event) {
-        ImageView imagepogress =findViewById(R.id.progresspluss);
-        ImageView imagepogress2 =findViewById(R.id.progressminus);
+         imagepogress = findViewById(R.id.progresspluss);
+         imagepogress2 =findViewById(R.id.progressminus);
+         connectinline = findViewById(R.id.connectingLine);
         VideoView videoView = findViewById(R.id.Imageframes);
 
          switch (event.getAction()) {
@@ -278,6 +285,12 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                     imagepogress2.setLayoutParams(layoutParams3);
                     videoView.seekTo((int)((endthumb/200)*20000));
                 }
+                RelativeLayout.LayoutParams layoutParamsline = new RelativeLayout.LayoutParams((int)(endthumb-startthumb),
+                        (int)tempp
+                );
+                layoutParamsline.leftMargin=(int)(startthumb);
+                layoutParamsline.rightMargin=(int)((Resources.getSystem().getDisplayMetrics().widthPixels)-endthumb);
+                connectinline.setLayoutParams(layoutParamsline);
                 // view.setY(event.getRawY() + dyy);
                 break;
         }

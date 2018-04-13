@@ -88,6 +88,13 @@
                     android:id="@+id/image1thumb"
                     android:layout_marginStart="80dp"/>
                 <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/connectingLine"
+                    android:layout_height="5dp"
+                    android:background="#00FFFF"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="130dp"/>
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/progressminus"
