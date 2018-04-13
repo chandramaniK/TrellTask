@@ -65,19 +65,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         /////////////////////
         ImageView imagethumbview1 = findViewById(R.id.image1thumb);
         ImageView imagethumbview2 = findViewById(R.id.image1thumb2);
-        Bitmap bb1 = Bitmap.createBitmap(80,300,Bitmap.Config.ARGB_8888);
-        Bitmap bb2 = Bitmap.createBitmap(80,300,Bitmap.Config.ARGB_8888);
+        Bitmap bb1 = Bitmap.createBitmap(80,500,Bitmap.Config.ARGB_8888);
+        Bitmap bb2 = Bitmap.createBitmap(80,500,Bitmap.Config.ARGB_8888);
         Canvas canvas2 = new Canvas(bb1);
         canvas2.setBitmap(bb1);
         Paint paint3 =new Paint();
         paint3.setStyle(Paint.Style.FILL);
         paint3.setColor(Color.WHITE);
         paint3.setStrokeWidth(10);
-        canvas2.drawCircle(imagethumbview1.getX()+40,150,40,paint3);
-        canvas2.drawLine(imagethumbview1.getX()+40,300,imagethumbview1.getX()+40,0,paint3);
+        canvas2.drawCircle(imagethumbview1.getX()+40,250,40,paint3);
+        canvas2.drawLine(imagethumbview1.getX()+40,500,imagethumbview1.getX()+40,0,paint3);
         canvas2.setBitmap(bb2);
-        canvas2.drawCircle(imagethumbview2.getX()+40,150,40,paint3);
-        canvas2.drawLine(imagethumbview2.getX()+40,300,imagethumbview2.getX()+40,0,paint3);
+        canvas2.drawCircle(imagethumbview2.getX()+40,250,40,paint3);
+        canvas2.drawLine(imagethumbview2.getX()+40,500,imagethumbview2.getX()+40,0,paint3);
         imagethumbview1.setImageBitmap(bb1);
         imagethumbview2.setImageBitmap(bb2);
         //rangebar set touch listner

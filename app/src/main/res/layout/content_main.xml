@@ -90,14 +90,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:foregroundGravity="center"
-                    android:id="@+id/image1thumb2"
-                    android:layout_marginStart="250dp"/>
+                    android:id="@+id/progressminus"
+                    android:background="#80000000" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/progressminus"
-                    android:background="#80000000" />
+                    android:foregroundGravity="center"
+                    android:id="@+id/image1thumb2"
+                    android:layout_marginStart="250dp"/>
+
             </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
